@@ -1,29 +1,52 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Zap, Globe, Search, BarChart3, Phone, PlaneTakeoff, Bike, Sparkles } from "lucide-react"
+import {
+  ArrowRight,
+  Zap,
+  Globe,
+  Search,
+  BarChart3,
+  Phone,
+  PlaneTakeoff,
+  Bike,
+  Sparkles,
+  ChevronDown,
+} from "lucide-react"
 
 export default function Home() {
+  const scrollToToolkit = () => {
+    const toolkitSection = document.getElementById("toolkit-section")
+    if (toolkitSection) {
+      toolkitSection.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
     <div className="space-y-16">
-      <section className="text-center py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-3xl overflow-hidden relative">
+      <section className="relative text-center py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-3xl overflow-hidden">
         <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.5))] pointer-events-none" />
-        <h1 className="text-5xl font-bold mb-6 text-white drop-shadow-lg relative z-10">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white drop-shadow-lg relative z-10">
           Empower Your Business with BizForge
         </h1>
-        <p className="text-xl mb-8 text-white/80 max-w-2xl mx-auto relative z-10">
+        <p className="text-lg sm:text-xl lg:text-2xl mb-8 text-white/80 max-w-2xl mx-auto relative z-10">
           Access a suite of powerful tools to supercharge your online presence and drive your business forward.
         </p>
-        <Button asChild size="lg" className="bg-white text-purple-600 hover:bg-white/90 relative z-10">
-          <Link href="/tools" className="flex items-center">
-            Explore Our Tools <ArrowRight className="ml-2" />
-          </Link>
+        <Button
+          onClick={scrollToToolkit}
+          variant="outline"
+          size="icon"
+          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full"
+        >
+          <ChevronDown className="h-6 w-6" />
         </Button>
       </section>
 
-      <section className="py-16 bg-gradient-to-r from-yellow-100 to-pink-100 rounded-3xl">
-        <h2 className="text-4xl font-bold text-center mb-12 text-purple-800">Our Comprehensive Toolkit</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 px-4">
+      <section id="toolkit-section" className="py-16 bg-gradient-to-r from-yellow-100 to-pink-100 rounded-3xl">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 text-purple-800">
+          Our Comprehensive Toolkit
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 px-4">
           {[
             {
               icon: Zap,
@@ -90,12 +113,21 @@ export default function Home() {
             </Card>
           ))}
         </div>
+        <div className="mt-12 text-center">
+          <Button asChild size="lg" className="bg-purple-600 text-white hover:bg-purple-700">
+            <Link href="/tools" className="flex items-center">
+              Explore All Tools <ArrowRight className="ml-2" />
+            </Link>
+          </Button>
+        </div>
       </section>
 
       <section className="text-center py-16 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 rounded-3xl overflow-hidden relative">
         <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.5))] pointer-events-none" />
-        <h2 className="text-4xl font-bold mb-6 text-white drop-shadow-lg relative z-10">Ready to Forge Ahead?</h2>
-        <p className="text-xl mb-8 text-white/80 max-w-2xl mx-auto relative z-10">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-white drop-shadow-lg relative z-10">
+          Ready to Forge Ahead?
+        </h2>
+        <p className="text-lg sm:text-xl lg:text-2xl mb-8 text-white/80 max-w-2xl mx-auto relative z-10">
           Discover how BizForge can transform your business operations and drive growth.
         </p>
         <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-white/90 relative z-10">
