@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 25% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 25% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 25% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Vibrant Blue */
+    --primary: 210 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Vibrant Purple */
+    --secondary: 280 100% 60%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Light Gray */
+    --muted: 230 20% 80%;
+    --muted-foreground: 230 25% 20%;
+
+    /* Vibrant Orange */
+    --accent: 30 100% 50%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 230 20% 20%;
+    --input: 230 20% 20%;
+    --ring: 210 100% 50%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 230 25% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 25% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 25% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 280 100% 60%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 230 20% 30%;
+    --muted-foreground: 230 20% 80%;
+
+    --accent: 30 100% 50%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 230 20% 20%;
+    --input: 230 20% 20%;
+    --ring: 210 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.bg-grid-white {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+
